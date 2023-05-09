@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 namespace FreeCourse.Shared.Dtos
 {
 
-    //api response class xx
+    //api response class xx asd
     public class ResponseDto<T>
     {
 
