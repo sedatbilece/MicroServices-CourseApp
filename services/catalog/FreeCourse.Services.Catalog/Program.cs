@@ -5,6 +5,7 @@ using Microsoft.Extensions.Options;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<ICategoryService, CategoryService>(); 
+builder.Services.AddScoped<ICourseService, CourseService>(); 
 
 
 // Add services to the container.
