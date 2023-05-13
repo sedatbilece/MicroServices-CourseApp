@@ -4,7 +4,10 @@
 Our microservice responsible for storing and presenting information about our courses.
 <br>
 • MongoDB (Database) <br>
-• One-To-Many/One-To-One relationship
+• One-To-Many/One-To-One relationship<br>
+
+<img src="./docs/catalog-swagger.png">
+<img src="./docs/catalogapi-test.gif">
 
 ### Basket Microservice
 Our microservice responsible for managing the shopping cart.<br>
