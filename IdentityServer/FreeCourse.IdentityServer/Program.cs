@@ -1,9 +1,8 @@
 ﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
-
+using FreeCourse.IdentityServer.Data;
 using FreeCourse.IdentityServer.Models;
-using IdentityServer4.EntityFramework.DbContexts;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -41,35 +40,25 @@ namespace FreeCourse.IdentityServer
 
             try
             {
-               
-
                 var host = CreateHostBuilder(args).Build();
-
 
                 using (var scope = host.Services.CreateScope())
                 {
-                    var services = scope.ServiceProvider;
+                    var serviceProvider = scope.ServiceProvider;
 
-                var  dbContext  = services.GetRequiredService<ConfigurationDbContext>();
+                    var applicationDbContext = serviceProvider.GetRequiredService<ApplicationDbContext>();
 
-                    dbContext.Database.Migrate();
+                    applicationDbContext.Database.Migrate();
 
-                    var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
+                    var userManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
 
-
-                    if(!userManager.Users.Any()) {
-
-                        userManager.CreateAsync(new ApplicationUser
-                        {
-                            UserName = "sedatblc",
-                            Email = "deneme@gmail.com",
-                        }, "Password123*").Wait();
+                    if (!userManager.Users.Any())
+                    {
+                        userManager.CreateAsync(new ApplicationUser { UserName = "sedatblc", Email = "sedatblc@outlook.com", City = "Ankara" }, "Password123*").Wait();
                     }
                 }
 
-
-
-                    Log.Information("Starting host...");
+                Log.Information("Starting host...");
                 host.Run();
                 return 0;
             }

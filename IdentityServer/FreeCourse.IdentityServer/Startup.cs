@@ -1,15 +1,17 @@
 ﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
-
 using IdentityServer4;
+using FreeCourse.IdentityServer.Data;
+using FreeCourse.IdentityServer.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using IdentityServerHost.Quickstart.UI;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using FreeCourse.IdentityServer.Services;
 
 namespace FreeCourse.IdentityServer
 {
@@ -26,9 +28,16 @@ namespace FreeCourse.IdentityServer
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddLocalApiAuthentication();
+
             services.AddControllersWithViews();
 
-            var connectionString = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
 
             var builder = services.AddIdentityServer(options =>
             {
@@ -40,20 +49,13 @@ namespace FreeCourse.IdentityServer
                 // see https://identityserver4.readthedocs.io/en/latest/topics/resources.html
                 options.EmitStaticAudienceClaim = true;
             })
-                .AddTestUsers(TestUsers.Users)
-                // this adds the config data from DB (clients, resources, CORS)
-                .AddConfigurationStore(options =>
-                {
-                    options.ConfigureDbContext = builder => builder.UseSqlServer(connectionString);
-                })
-                // this adds the operational data from DB (codes, tokens, consents)
-                .AddOperationalStore(options =>
-                {
-                    options.ConfigureDbContext = builder => builder.UseSqlServer(connectionString);
+                .AddInMemoryIdentityResources(Config.IdentityResources)
+               .AddInMemoryApiResources(Config.ApiResources)
+                .AddInMemoryApiScopes(Config.ApiScopes)
+                .AddInMemoryClients(Config.Clients)
+                .AddAspNetIdentity<ApplicationUser>();
 
-                    // this enables automatic token cleanup. this is optional.
-                    options.EnableTokenCleanup = true;
-                });
+            builder.AddResourceOwnerValidator<IdentityResourceOwnerPasswordValidator>();
 
             // not recommended for production - you need to store your key material somewhere secure
             builder.AddDeveloperSigningCredential();
@@ -83,6 +85,7 @@ namespace FreeCourse.IdentityServer
 
             app.UseRouting();
             app.UseIdentityServer();
+            app.UseAuthentication();
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
