@@ -35,6 +35,8 @@ Our microservice responsible for managing user data, generating access tokens an
 ### PhotoStock Microservice
 Our microservice responsible for storing and presenting course photos.<br>
 
+<img src="./docs/save-photo-with-token.png">
+
 ### API Gateway
 • Ocelot Library<br>
 
@@ -47,3 +49,5 @@ Our microservice responsible for storing and presenting course photos.<br>
 • Generating tokens and refresh tokens<br>
 • Protecting our microservices with access tokens<br>
 • Building a structure that complies with OAuth 2.0 / OpenID Connect protocols.<br>
+
+<img src="./docs/identity-token-postman.png">
