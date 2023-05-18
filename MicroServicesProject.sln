@@ -22,6 +22,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityServer", "IdentityS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreeCourse.IdentityServer", "IdentityServer\FreeCourse.IdentityServer\FreeCourse.IdentityServer.csproj", "{D4EF4626-C21E-48CA-9517-19C8BADBBF7E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PhotoStock", "PhotoStock", "{5C05C0E3-B77D-453C-96CA-BE2850DD74CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeCourse.Services.PhotoStock", "Services\PhotoStock\FreeCourse.Services.PhotoStock\FreeCourse.Services.PhotoStock.csproj", "{B3ADBCD4-825C-43EF-A6DF-FBAB225AB1CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +44,10 @@ Global
 		{D4EF4626-C21E-48CA-9517-19C8BADBBF7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4EF4626-C21E-48CA-9517-19C8BADBBF7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4EF4626-C21E-48CA-9517-19C8BADBBF7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3ADBCD4-825C-43EF-A6DF-FBAB225AB1CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3ADBCD4-825C-43EF-A6DF-FBAB225AB1CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3ADBCD4-825C-43EF-A6DF-FBAB225AB1CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3ADBCD4-825C-43EF-A6DF-FBAB225AB1CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,6 +57,8 @@ Global
 		{64FBD975-0D45-40A1-95AD-1727EAEC9805} = {CE364653-8DCB-4F82-BC5E-CBC183E1AC5F}
 		{DAB423E8-269C-4854-8A65-BA7F0F0BCEDF} = {05235292-BCB2-40B0-B51A-908A0A1EA6E7}
 		{D4EF4626-C21E-48CA-9517-19C8BADBBF7E} = {B2803328-EC46-4623-8DA8-AA14F43BD1EB}
+		{5C05C0E3-B77D-453C-96CA-BE2850DD74CE} = {BAA7E41A-5D50-4BD1-9E4A-5BF4C5224358}
+		{B3ADBCD4-825C-43EF-A6DF-FBAB225AB1CE} = {5C05C0E3-B77D-453C-96CA-BE2850DD74CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D16955B-3BDD-4EF1-BF52-8B670FD0F6BA}
