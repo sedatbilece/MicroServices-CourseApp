@@ -10,7 +10,8 @@
 
         public decimal TotalPrice
         {
-            get => basketItems.Sum(x => x.Price * x.Quantity);
+            get => basketItems.Sum(x => x.Price * x.Quantity)
+
 ;        }
     }
 }
