@@ -16,6 +16,7 @@ Our microservice responsible for managing the shopping cart.<br>
 ### Discount Microservice
 Our microservice responsible for managing discount coupons assigned to users.<br>
 • PostgreSQL (Database)<br>
+• Dapper (Micro ORM)<br>
 
 ### Order Microservice
 Our microservice responsible for managing orders.<br>
