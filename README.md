@@ -18,6 +18,14 @@ Our microservice responsible for managing discount coupons assigned to users.<br
 • PostgreSQL (Database)<br>
 • Dapper (Micro ORM)<br>
 
+<img src="./docs/discount/ss1.png">
+<img src="./docs/discount/ss2.png">
+<img src="./docs/discount/ss3.png">
+<img src="./docs/discount/ss4.png">
+<img src="./docs/discount/ss5.png">
+<img src="./docs/discount/ss6.png">
+
+
 ### Order Microservice
 Our microservice responsible for managing orders.<br>
 We developed this microservice using the Domain Driven Design approach.<br>
