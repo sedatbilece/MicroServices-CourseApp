@@ -1,5 +1,14 @@
 # MicroServicesProject
 
+### Identity Server Microservice
+Our microservice responsible for managing user data, generating access tokens and refresh tokens.<br>
+• Generating tokens and refresh tokens<br>
+• Protecting our microservices with access tokens<br>
+• Building a structure that complies with OAuth 2.0 / OpenID Connect protocols.<br>
+• SQL Server (Database)<br>
+
+<img src="./docs/identity-token-postman.png">
+
 ### Catalog Microservice
 Our microservice responsible for storing and presenting information about our courses.
 <br>
@@ -9,9 +18,7 @@ Our microservice responsible for storing and presenting information about our co
 <img src="./docs/catalog-swagger.png">
 <img src="./docs/catalogapi-test.gif">
 
-### Basket Microservice
-Our microservice responsible for managing the shopping cart.<br>
-• RedisDB (Database)
+
 
 ### Discount Microservice
 Our microservice responsible for managing discount coupons assigned to users.<br>
@@ -25,6 +32,10 @@ Our microservice responsible for managing discount coupons assigned to users.<br
 <img src="./docs/discount/ss5.png">
 <img src="./docs/discount/ss6.png">
 
+### PhotoStock Microservice
+Our microservice responsible for storing and presenting course photos.<br>
+
+<img src="./docs/save-photo-with-token.png">
 
 ### Order Microservice
 Our microservice responsible for managing orders.<br>
@@ -37,14 +48,12 @@ We used the MediatR library to implement the CQRS design pattern in this microse
 ### FakePayment Microservice
 Our microservice responsible for handling payments.<br>
 
-### IdentityServer Microservice
-• SQL Server (Database)<br>
-Our microservice responsible for managing user data, generating access tokens and refresh tokens.<br>
 
-### PhotoStock Microservice
-Our microservice responsible for storing and presenting course photos.<br>
 
-<img src="./docs/save-photo-with-token.png">
+
+### Basket Microservice
+Our microservice responsible for managing the shopping cart.<br>
+• RedisDB (Database)
 
 ### API Gateway
 • Ocelot Library<br>
@@ -54,9 +63,4 @@ Our microservice responsible for storing and presenting course photos.<br>
 • We used the MassTransit library to communicate with RabbitMQ.<br>
 • RabbitMQ (MassTransit Library)<br>
 
-### Identity Server
-• Generating tokens and refresh tokens<br>
-• Protecting our microservices with access tokens<br>
-• Building a structure that complies with OAuth 2.0 / OpenID Connect protocols.<br>
 
-<img src="./docs/identity-token-postman.png">
