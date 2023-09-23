@@ -1,4 +1,4 @@
-# MicroServicesProject
+# MicroServices-CourseApp
 
 ### Identity Server Microservice
 Our microservice responsible for managing user data, generating access tokens and refresh tokens.<br>
@@ -37,7 +37,7 @@ Our microservice responsible for storing and presenting course photos.<br>
 
 <img src="./docs/save-photo-with-token.png">
 
-### Order Microservice
+### Order Microservice (not completed)
 Our microservice responsible for managing orders.<br>
 We developed this microservice using the Domain Driven Design approach.<br>
 We used the MediatR library to implement the CQRS design pattern in this microservice.<br>
@@ -47,9 +47,6 @@ We used the MediatR library to implement the CQRS design pattern in this microse
 
 ### FakePayment Microservice
 Our microservice responsible for handling payments.<br>
-
-
-
 
 ### Basket Microservice
 Our microservice responsible for managing the shopping cart.<br>
