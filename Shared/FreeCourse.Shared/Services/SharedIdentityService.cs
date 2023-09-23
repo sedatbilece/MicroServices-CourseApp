@@ -16,7 +16,7 @@ namespace FreeCourse.Shared.Services
         }
 
         public string GetUserId { 
-            get => _contextAccessor.HttpContext.User.FindFirst("sub").Value; 
+            get => _contextAccessor.HttpContext.User.FindFirst("sub")?.Value; 
             set => throw new NotImplementedException(); 
         }
     }
